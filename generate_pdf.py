@@ -38,7 +38,7 @@ story = []
 
 story.append(
     Paragraph(
-        "TECH DEALS DAY",
+        "The Best Technology Deals",
         styles["Title"]
     )
 )
