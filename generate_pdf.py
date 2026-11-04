@@ -55,15 +55,12 @@ story.append(
         styles["Heading2"]
     )
 )
-story.append(Spacer(1, 50))
-
 story.append(
     Paragraph(
-        f"Offerte analizzate: {len(offers)}",
+        best_offer["nome"],
         styles["Heading3"]
     )
 )
-
 story.append(
     Paragraph(
         f"{best_offer['prezzo']} | {best_offer['sconto']}",
