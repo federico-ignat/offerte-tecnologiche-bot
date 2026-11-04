@@ -46,7 +46,7 @@ story.append(
 story.append(
     Paragraph(
         "Le migliori offerte tecnologiche del giorno",
-        style["Heading2"]
+        styles["Heading2"]
     )
 )
 story.append(Spacer(1, 50))
