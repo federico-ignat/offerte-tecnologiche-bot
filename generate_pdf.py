@@ -40,7 +40,7 @@ story.append(
 story.append(Spacer(1, 20))
 
 for offer in offers:
-  story.appends(
+  story.append(
     Paragraph(
       f"<b>{offer['categoria']}</b>",
       style["Heading2"]
