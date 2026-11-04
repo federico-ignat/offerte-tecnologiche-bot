@@ -122,7 +122,7 @@ best_offer = max(
 story.append(
     Paragraph(
         "Offerta del giorno",
-        style["Title"]
+        styles["Title"]
     )
 )
 
@@ -131,14 +131,14 @@ story.append(Spacer(1, 20))
 story.append(
     Paragraph(
         best_offer["nome"],
-        style["Heading1"]
+        styles["Heading1"]
     )
 )
 
 story.append(
         Paragraph(
             f"Sconto: {best_offer['sconto']}",
-            style["Normal"]
+            styles["Normal"]
         )
 )
 
