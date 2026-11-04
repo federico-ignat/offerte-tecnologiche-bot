@@ -87,8 +87,8 @@ for offer in offers:
     )
 table = Table(data, colWidths=[90, 200, 80, 80])
 
-table.setStyles(
-    TableStyles([
+table.setStyle(
+    TableStyle([
         ('BACKGROUND', (0,0), (-1,0), color.darkblue),
         ('TEXTCOLOR', (0,0), (-1,0), color.white),
 
