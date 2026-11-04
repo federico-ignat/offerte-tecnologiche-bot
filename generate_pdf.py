@@ -42,33 +42,41 @@ story = []
 
 # Copertina
 
+story.append(PageBreak())
+
 story.append(
     Paragraph(
-        "The Best Technology Deals",
+        "TOP OFFERTE",
         styles["Title"]
     )
 )
+story.append(Spacer(1, 20))
 
-story.append(
-    Paragraph(
-        "Le migliori offerte tecnologiche del giorno",
-        styles["Heading2"]
+medals = ["🥇", "🥈", "🥉"]
+
+for i, offer in enumerate(ranking):
+    if i < 3:
+        prefix = medals[i]
+    else:
+        prefix = f"{i+1}°"
+
+    story.append(
+        Paragraph(
+            f"{prefix} {offer['nome']}",
+            style["Heading2"]
+        )
     )
-)
-story.append(
-    Paragraph(
-        best_offer["nome"],
-        styles["Heading3"]
+
+    story.append(
+        Paragraph(
+            f"{offer['prezzo']} ({offer['sconto']})",
+            styles["Normal"]
+        )
     )
-)
-story.append(
-    Paragraph(
-        f"{best_offer['prezzo']} | {best_offer['sconto']}",
-        styles["Normal"]
-    )
-)
 
 story.append(Spacer(1, 10))
+
+story.append(PageBreak())
 
 
 story.append(
@@ -79,6 +87,14 @@ story.append(
 )
 
 story.append(PageBreak())
+
+ranking = sorted(
+    offers,
+    key=lambda x: int(
+        x["sconto"].replace("-", "").replace("%", "")
+    ),
+    reverse=True
+)
 
 # TABELLA OFFERTE
 
