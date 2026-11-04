@@ -21,7 +21,7 @@ pdf_path = f"offers/offerte_{today}.pdf"
 latest_path = "offers/latest_offers.pdf"
 
 # Legge dati 
-with open("offerte.json", "r", encoding="utf-8") as f:
+with open("offers.json", "r", encoding="utf-8") as f:
   offers = json.load(f)
 
 doc = SimpleDocTemplate(pdf_path, pagesize=A4)
