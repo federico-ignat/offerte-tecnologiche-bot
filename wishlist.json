@@ -1,0 +1,26 @@
+[
+  {
+    "categoria": "GPU",
+    "nome": "RTX 5070"
+  }
+
+  {
+    "categoria": "SSD",
+    "nome": "Samsung 990 EVO 2TB"
+  }
+
+  {
+    "categoria": "Mouse",
+    "nome": "Logitech MX Master 3S"
+  }
+
+  {
+    "categoria": "Monitor",
+    "nome": "Samsung OdysseY G5"
+  }
+
+  {
+    "categoria": "CPU",
+    "nome": "AMD Ryzen 7 9800X"  
+  }
+]
