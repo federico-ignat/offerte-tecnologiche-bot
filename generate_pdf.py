@@ -28,6 +28,20 @@ latest_path = "offers/latest_offers.pdf"
 with open("offers.json", "r", encoding="utf-8") as f:
   offers = json.load(f)
 
+best_offer = max(
+    offers,
+    key=lambda x: int(
+        x["sconto"].replace("-", "").replace("%", "")
+    )
+)
+
+story.append(
+    Paragraph(
+        f"{best_offer['prezzo']} | {best_offer['sconto']}",
+        styles["Normal"]
+    )
+)
+
 doc = SimpleDocTemplate(pdf_path, pagesize=A4)
 
 styles = getSampleStyleSheet()
@@ -60,12 +74,6 @@ story.append(
 
 story.append(Spacer(1, 10))
 
-story.append(
-    Paragraph(
-        f"{best_offer['prezzo']} | {best_offer['sconto']}",
-        styles["Normal"]
-    )
-)
 
 story.append(
     Paragraph(
