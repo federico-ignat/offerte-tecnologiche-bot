@@ -8,6 +8,9 @@ from reportlab.platypus import (
     SimpleDocTemplate,
     Paragraph,
     Spacer,
+    PageBreak,
+    Table,
+    Tablestyle
    
 )
 from reportlab.lib.styles import getSampleStyleSheet
@@ -30,6 +33,89 @@ style = getSampleStyleSheet()
 
 story = []
 
+# Copertina
+
+story.append(
+    Paragraph(
+        "TECH DEALS DAY"
+        styles["Title"]
+    )
+)
+
+story.append(Spacer(1, 20))
+
+story.append(
+    Paragraph(
+        f"Edizione del {today}",
+        style["Heading2"]
+    )
+)
+
+story.append(Spacer(1, 200))
+
+story.append(
+    Paragraph(
+        "Generato automaticamente con GitHub Actions",
+        style["Normal"]
+    )
+)
+
+story.append(PageBreak())
+
+# TABELLA OFFERTE
+
+story.append(
+    Paragraph(
+        "Migliori Offerte del Giorno",
+        style["Title"]
+    )
+)
+
+story.append(Spacer(1, 20))
+
+data = [
+    ["Categoria", "Prodotto", "Prezzo", "Sconto"]
+]
+
+for offer in offers:
+    data.append([
+        offer["categoria"],
+        offer["nome"],
+        offer["prezzo"],
+        offer["sconto"]
+    ] 
+    )
+table = Table(data, coldWidths=[90, 200, 80, 80])
+
+table.setStyle(
+    TableStyle([
+        ('BACKGROUND', (0,0) (-1,0), color.darkblue),
+        ('TEXTCOLOR', (0,0) (-1,0), color.white),
+
+        ('GRID', (0,0) (-1,1), 1, color.black),
+        
+        ('FONTNAME', (0,0) (-1,0), 'Helvetica-Bold'),
+        
+        ('BACKGROUND', (0,1) (-1,1), color.beige)
+    ])
+)
+
+story.append(table)
+
+story.append(Spacer(1, 30))
+
+story.append(
+    Paragraph(
+        f"Numero offerte trovate: {len(offers)}",
+        styles["Heading3"]
+    )
+)
+
+doc.build(story)
+
+shutil.copy(pdf_path, latest_path)
+
+print("PDF generato con successo!")
 title = Paragraph("Tech Deals Daily", style["Title"])
 story.append(title)
 
