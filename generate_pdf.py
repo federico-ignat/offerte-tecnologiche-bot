@@ -112,6 +112,36 @@ story.append(
     )
 )
 
+best_offer = max(
+    offers,
+    key=lambda x: int(
+        x["sconto"].replace("-", "").replace("%", "")
+    )
+)
+
+story.append(
+    Paragraph(
+        "Offerta del giorno",
+        style["Title"]
+    )
+)
+
+story.append(Spacer(1, 20))
+
+story.append(
+    Paragraph(
+        best_offer["nome"],
+        style["Heading1"]
+    )
+)
+
+story.append(
+        Paragraph(
+            f"Sconto: {best_offer['sconto']}"
+            style["Normal"]
+        )
+)
+
 doc.build(story)
 
 shutil.copy(pdf_path, latest_path)
