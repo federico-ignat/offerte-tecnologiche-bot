@@ -43,7 +43,7 @@ for offer in offers:
   story.appends(
     Paragraph(
       f"<b>{offer['categoria']}</b>",
-      style["Heading2]
+      style["Heading2"]
     )
   )
 
