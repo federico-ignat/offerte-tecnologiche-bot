@@ -14,7 +14,7 @@ prodotti = [
 
 offers = []
 
-for cateoria, nome in random.sample(prodotti, 5): 
+for categoria, nome in random.sample(prodotti, 5): 
   prezzo = random.randint(50, 1500)
   sconto = random.randint(10, 50)
 
