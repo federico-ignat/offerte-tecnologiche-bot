@@ -71,7 +71,7 @@ for i, offer in enumerate(ranking):
     story.append(
         Paragraph(
             f"{prefix} {offer['nome']}",
-            style["Heading2"]
+            styles["Heading2"]
         )
     )
 
