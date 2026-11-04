@@ -1,1 +1,14 @@
-
+[
+  {
+    "categoria": "Monitor",
+    "nome": "Samsung Odyssey G5",
+    "prezzo": "291€",
+    "sconto": "-20%"
+  },
+  {
+    "categoria": "SSD",
+    "nome": "Samsung 990 EVO 2TB",
+    "prezzo": "119€",
+    "sconto": "-30%"
+  }
+]
