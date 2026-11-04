@@ -34,6 +34,14 @@ best_offer = max(
         x["sconto"].replace("-", "").replace("%", "")
     )
 )
+
+ranking = sorted(
+    offers,
+    key = lambda x: int(
+        x["sconto"].replace("-", "").replace("%", "")
+    ),
+    reverse=True 
+)
 doc = SimpleDocTemplate(pdf_path, pagesize=A4)
 
 styles = getSampleStyleSheet()
