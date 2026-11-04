@@ -34,14 +34,6 @@ best_offer = max(
         x["sconto"].replace("-", "").replace("%", "")
     )
 )
-
-story.append(
-    Paragraph(
-        f"{best_offer['prezzo']} | {best_offer['sconto']}",
-        styles["Normal"]
-    )
-)
-
 doc = SimpleDocTemplate(pdf_path, pagesize=A4)
 
 styles = getSampleStyleSheet()
@@ -69,6 +61,13 @@ story.append(
     Paragraph(
         f"Offerte analizzate: {len(offers)}",
         styles["Heading3"]
+    )
+)
+
+story.append(
+    Paragraph(
+        f"{best_offer['prezzo']} | {best_offer['sconto']}",
+        styles["Normal"]
     )
 )
 
