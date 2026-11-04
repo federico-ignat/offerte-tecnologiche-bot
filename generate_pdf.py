@@ -43,16 +43,29 @@ story.append(
     )
 )
 
-story.append(Spacer(1, 20))
+stoyr.append(
+    Paragraph(
+        "Le migliori offerte tecnologiche del giorno",
+        style["Heading"2]
+    )
+)
+story.append(Spacer(1, 50))
 
 story.append(
     Paragraph(
-        f"Edizione del {today}",
-        styles["Heading2"]
+        f"Offerte analizzate: {len(offers)}",
+        styles["Heading3"]
     )
 )
 
-story.append(Spacer(1, 200))
+story.append(Spacer(1, 10))
+
+story.append(
+    Paragraph(
+        f"{best_offer['prezzo']} | {best_offer['sconto']}",
+        styles["Normal"]
+    )
+)
 
 story.append(
     Paragraph(
