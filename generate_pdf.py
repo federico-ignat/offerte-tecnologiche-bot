@@ -10,7 +10,7 @@ from reportlab.platypus import (
     Spacer,
    
 )
-from reportlab.lib.style import getSampleStyleSheet
+from reportlab.lib.styles import getSampleStyleSheet
 
 # Cartella output
 os.makedirs("offers", exist_ok=True)
