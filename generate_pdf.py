@@ -85,7 +85,7 @@ for offer in offers:
         offer["sconto"]
     ] 
     )
-table = Table(data, coldWidths=[90, 200, 80, 80])
+table = Table(data, colWidths=[90, 200, 80, 80])
 
 table.setStyles(
     TableStyles([
