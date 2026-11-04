@@ -8,12 +8,15 @@ prodotti = [
   ("Tastiera", "Keychron K2"),
   ("RAM", "Corsair Vengeance 32GB"),
   ("CPU", "AMD Ryzen 7 9800x"),
+  ("Notebook", "Lenovo Legion 5"),
+  ("Smartphone", "Samsung Galaxy S25")
 ]
 
 offers = []
 
-for cateoria, nome in random.sample(prodotti, 4): 
-  prezzo = random.randint(50, 500)
+for cateoria, nome in random.sample(prodotti, 5): 
+  prezzo = random.randint(50, 1500)
+  sconto = random.randint(10, 50)
 
   offers.append({
     "categoria": categoria,
@@ -25,4 +28,4 @@ for cateoria, nome in random.sample(prodotti, 4):
 with open("offers.json", "w", encoding= "utf-8") as f:
   json.dump(offers, f, indent=2, ensure_ascii=False)
 
-print("offers.json aggiornato!")
+print("Offerte generate correttamente!")
