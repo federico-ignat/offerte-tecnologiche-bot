@@ -43,7 +43,7 @@ story.append(
     )
 )
 
-stoyr.append(
+story.append(
     Paragraph(
         "Le migliori offerte tecnologiche del giorno",
         style["Heading2"]
