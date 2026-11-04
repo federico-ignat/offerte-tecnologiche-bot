@@ -29,7 +29,7 @@ with open("offers.json", "r", encoding="utf-8") as f:
 
 doc = SimpleDocTemplate(pdf_path, pagesize=A4)
 
-style = getSampleStyleSheet()
+styles = getSampleStyleSheet()
 
 story = []
 
@@ -47,7 +47,7 @@ story.append(Spacer(1, 20))
 story.append(
     Paragraph(
         f"Edizione del {today}",
-        style["Heading2"]
+        styles["Heading2"]
     )
 )
 
@@ -56,7 +56,7 @@ story.append(Spacer(1, 200))
 story.append(
     Paragraph(
         "Generato automaticamente con GitHub Actions",
-        style["Normal"]
+        styles["Normal"]
     )
 )
 
@@ -67,7 +67,7 @@ story.append(PageBreak())
 story.append(
     Paragraph(
         "Migliori Offerte del Giorno",
-        style["Title"]
+        styles["Title"]
     )
 )
 
@@ -87,8 +87,8 @@ for offer in offers:
     )
 table = Table(data, coldWidths=[90, 200, 80, 80])
 
-table.setStyle(
-    TableStyle([
+table.setStyles(
+    TableStyles([
         ('BACKGROUND', (0,0), (-1,0), color.darkblue),
         ('TEXTCOLOR', (0,0), (-1,0), color.white),
 
@@ -116,11 +116,11 @@ doc.build(story)
 shutil.copy(pdf_path, latest_path)
 
 print("PDF generato con successo!")
-title = Paragraph("Tech Deals Daily", style["Title"])
+title = Paragraph("Tech Deals Daily", styles["Title"])
 story.append(title)
 
 story.append(
-  Paragraph(f"Data report: {today}", style["Normal"])
+  Paragraph(f"Data report: {today}", styles["Normal"])
 )
 
 story.append(Spacer(1, 20))
@@ -129,28 +129,28 @@ for offer in offers:
   story.append(
     Paragraph(
       f"<b>{offer['categoria']}</b>",
-      style["Heading2"]
+      styles["Heading2"]
     )
   )
 
 story.append(
   Paragraph(
     offer["nome"],
-    style["Normal"]
+    styles["Normal"]
   )
 )
 
 story.append(
   Paragraph(
     f"Prezzo: {offer['prezzo']}",
-    style["Normal"]
+    styles["Normal"]
   )
 )
 
 story.append(
   Paragraph(
     f"Sconto: {offer['sconto']}",
-    style["Normal"]
+    styles["Normal"]
   )
 )
 
