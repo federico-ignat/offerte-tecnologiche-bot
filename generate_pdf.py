@@ -10,7 +10,7 @@ from reportlab.platypus import (
     Spacer,
     PageBreak,
     Table,
-    Tablestyle
+    TableStyle
    
 )
 from reportlab.lib.styles import getSampleStyleSheet
@@ -89,14 +89,14 @@ table = Table(data, coldWidths=[90, 200, 80, 80])
 
 table.setStyle(
     TableStyle([
-        ('BACKGROUND', (0,0) (-1,0), color.darkblue),
-        ('TEXTCOLOR', (0,0) (-1,0), color.white),
+        ('BACKGROUND', (0,0), (-1,0), color.darkblue),
+        ('TEXTCOLOR', (0,0), (-1,0), color.white),
 
-        ('GRID', (0,0) (-1,1), 1, color.black),
+        ('GRID', (0,0), (-1,1), 1, color.black),
         
-        ('FONTNAME', (0,0) (-1,0), 'Helvetica-Bold'),
+        ('FONTNAME', (0,0), (-1,0), 'Helvetica-Bold'),
         
-        ('BACKGROUND', (0,1) (-1,1), color.beige)
+        ('BACKGROUND', (0,1), (-1,1), color.beige)
     ])
 )
 
