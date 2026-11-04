@@ -137,7 +137,7 @@ story.append(
 
 story.append(
         Paragraph(
-            f"Sconto: {best_offer['sconto']}"
+            f"Sconto: {best_offer['sconto']}",
             style["Normal"]
         )
 )
